@@ -1,0 +1,10 @@
+on post-fs-data
+    # snap gpu kernel
+    mkdir /data/vendor/snap 0755 cameraserver cameraserver
+    copy /vendor/etc/snap_gpu_kernel_32.bin /data/vendor/snap/snap_gpu_kernel_32.bin
+    copy /vendor/etc/snap_gpu_kernel_64.bin /data/vendor/snap/snap_gpu_kernel_64.bin
+    chown cameraserver cameraserver /data/vendor/snap/snap_gpu_kernel_32.bin
+    chown cameraserver cameraserver /data/vendor/snap/snap_gpu_kernel_64.bin
+    chmod 0755 /data/vendor/snap/snap_gpu_kernel_32.bin
+    chmod 0755 /data/vendor/snap/snap_gpu_kernel_64.bin
+
